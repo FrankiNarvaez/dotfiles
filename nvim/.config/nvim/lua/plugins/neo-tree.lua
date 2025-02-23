@@ -5,10 +5,6 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-  },
-  config = function()
-    -- Setup neo-tree
-    vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left<CR>', {})
-  end
+  }
 }
 
