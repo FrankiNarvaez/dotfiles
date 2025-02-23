@@ -1,11 +1,13 @@
 return {
-  "catppuccin/nvim",
-  lazy = false,
-  name = "catppuccin",
-  priority = 1000,
+  -- Plugin for the Kanagawa color scheme
+  "rebelot/kanagawa.nvim",
+  name = "kanagawa",
+  priority = 1000, -- High priority to ensure it loads early
+  opts = {
+    transparent = true, -- Enable transparent background
+    theme = "dragon", -- Set the theme variant to 'dragon'
+  },
   config = function()
-    -- Setup colorscheme
-    vim.cmd.colorscheme "catppuccin"
+    vim.cmd.colorscheme "kanagawa-dragon"
   end
 }
-
