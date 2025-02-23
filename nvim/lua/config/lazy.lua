@@ -28,6 +28,7 @@ local plugins = {
     -- dependencies = { "echasnovski/mini.icons" },
     opts = {}
   },
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }
 }
 local opts = {}
 
@@ -41,3 +42,11 @@ vim.cmd.colorscheme "catppuccin"
 local fzf_lua = require("fzf-lua")
 vim.keymap.set('n', '<leader><leader>', fzf_lua.files, { noremap = true, silent = true, desc = 'Search...' })
 vim.keymap.set('n', '<leader>sg', fzf_lua.live_grep, { noremap = true, silent = true, desc = 'Search...' })
+
+-- Setup treesitter
+local config = require("nvim-treesitter.configs")
+config.setup({
+  ensure_isntalled = { "lua", "javascript" },
+  highlight = { enable = true },
+  indent = { enable = true }
+})
