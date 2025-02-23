@@ -28,7 +28,16 @@ local plugins = {
     -- dependencies = { "echasnovski/mini.icons" },
     opts = {}
   },
-  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+  }
 }
 local opts = {}
 
@@ -50,3 +59,6 @@ config.setup({
   highlight = { enable = true },
   indent = { enable = true }
 })
+
+-- Setup neo-tree
+vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal left<CR>', {})
