@@ -15,6 +15,7 @@ if not set -q ZELLIJ
 end
 
 # zoxide init fish | source
+starship init fish | source
 atuin init fish | source
 
 set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
