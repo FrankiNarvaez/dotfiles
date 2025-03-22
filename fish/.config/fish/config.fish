@@ -14,14 +14,11 @@ if not set -q ZELLIJ
     zellij
 end
 
-# zoxide init fish | source
 starship init fish | source
 atuin init fish | source
 
 set -Ux CARAPACE_BRIDGES 'zsh,fish,bash,inshellisense'
 mkdir -p ~/.config/fish/completions
-# carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish
-# carapace _carapace | source
 
 set -x LS_COLORS "di=38;5;67:ow=48;5;60:ex=38;5;132:ln=38;5;144:*.tar=38;5;180:*.zip=38;5;180:*.jpg=38;5;175:*.png=38;5;175:*.mp3=38;5;175:*.wav=38;5;175:*.txt=38;5;223:*.sh=38;5;132"
 set -g fish_greeting ""
@@ -35,23 +32,8 @@ alias ll='ls -l'
 alias lla='ls -la'
 
 set -x EDITOR nvim
-set -Ux PATH $HOME/.rbenv/bin $PATH
-status --is-interactive; and source (rbenv init -|psub)
 
 set -gx PROJECT_PATHS ~/Development
-
-set -Ux PATH $PATH /home/cat/.rbenv/versions/3.2.3/bin
-## everforest
-#set -l foreground d3c6aa
-#set -l selection 2d4f67
-#set -l comment 859289
-#set -l red e67e80
-#set -l orange ff9e64
-#set -l yellow dbbc7f
-#set -l green a7c080
-#set -l purple d699b6
-#set -l cyan 7fbbb3
-#set -l pink d699b6
 
 # kanagawa dragon colors
 set -l foreground C5C9C5 # dragonWhite - un blanco suave para texto principal
@@ -87,16 +69,3 @@ set -g fish_pager_color_prefix $cyan
 set -g fish_pager_color_completion $foreground
 set -g fish_pager_color_description $comment
 
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
-
-# cargo
-source "$HOME/.cargo/env.fish"
-
-# .NET
-set -x DOTNET_ROOT $HOME/.dotnet
-set -x PATH $DOTNET_ROOT $PATH
-set -x PATH $DOTNET_ROOT/tools $PATH
-
-fish_add_path /home/cat/.spicetify
