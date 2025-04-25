@@ -1,101 +1,40 @@
 add_newline = false
-continuation_prompt = "[▸▹ ](dimmed white)"
 
 format = """
-$cmd_duration\
 $username\
-$hostname\
-$localip\
 $directory\
-$shlvl\
-$shell\
-$env_var\
-$jobs\
-$sudo\
-$character"""
-
-right_format = """
-$singularity\
-$kubernetes\
-$vcsh\
 $git_branch\
 $git_status\
-$git_metrics\
-$hg_branch\
-$pijul_channel\
+$character
+"""
+
+right_format = """
 $docker_context\
-$package\
 $c\
-$cmake\
-$cobol\
-$daml\
-$dart\
 $deno\
 $dotnet\
-$elixir\
-$elm\
-$erlang\
-$fennel\
 $golang\
-$guix_shell\
-$haskell\
-$haxe\
-$helm\
 $java\
-$julia\
 $kotlin\
 $gradle\
 $lua\
-$nim\
 $nodejs\
-$ocaml\
-$opa\
-$perl\
 $php\
-$pulumi\
-$purescript\
 $python\
-$raku\
-$rlang\
-$red\
 $ruby\
 $rust\
 $scala\
-$solidity\
 $swift\
-$terraform\
-$vlang\
-$vagrant\
 $zig\
-$buf\
-$conda\
-$meson\
-$spack\
-$memory_usage\
 $aws\
-$gcloud\
-$openstack\
 $azure\
-$crystal\
-$custom\
-$status"""
+"""
 
 [character]
 format = " $symbol "
 success_symbol = "[➜](bold italic purple)"
 error_symbol = "[➜](italic red)"
 vimcmd_symbol = "[➜](italic dimmed green)"
-# not supported in zsh
-
-[env_var.VIMSHELL]
-format = "[$env_value]($style)"
-style = 'green italic'
-
-[sudo]
-format = "[$symbol]($style)"
-style = "bold italic bright-purple"
-symbol = "⋈┈"
-disabled = false
 
 [username]
 style_user = "white"
@@ -109,31 +48,12 @@ format = '@[$hostname](bold purple) '
 disabled = false
 
 [directory]
-format = "[$path](bold $style)[$read_only]($read_only_style)"
-truncation_length = 8
-style = "fg:directory"
-read_only_style = "fg:directory"
-before_repo_root_style = "fg:directory"
-truncation_symbol = "-"
-truncate_to_repo = true
+format = "[ $path](bold $style)[$read_only]($read_only_style)"
 read_only = "  "
-
-[directory.substitutions]
-"Documents" = "󰈙"
-"Documentos" = "󰈙"
-"Downloads" = " "
-"Descargas" = " "
-"Pictures" = " "
-"Imágenes" = " "
-"Development" = "󰲋 "
-
-[cmd_duration]
-format = "[◄ $duration ](italic white)"
-
-[jobs]
-format = "[$symbol$number]($style) "
-style = "white"
-symbol = "[▶](blue italic)"
+use_os_path_sep = true
+style = "purple"
+truncation_length = 3
+truncation_symbol = "…/"
 
 [localip]
 ssh_only = true
@@ -141,20 +61,20 @@ format = " ◯[$localipv4](bold magenta)"
 disabled = false
 
 [git_branch]
-format = "[$symbol$branch]($style)"
-style = "bold fg:git"
+format = " on [$symbol$branch]($style)"
+style = "bold green"
 symbol = " "
 
 [git_status]
-format = '[ $all_status$ahead_behind ]($style)'
-style = "fg:text_color bg:git"
-
-[git_metrics]
-format = '([▴$added]($added_style))([▿$deleted]($deleted_style))'
-added_style = 'italic green'
-deleted_style = 'italic red'
-ignore_submodules = false
-disabled = false
+format = '[ $all_status$ahead_behind]($style)'
+style = ""
+conflicted = ''
+untracked = ''
+stashed = ''
+modified = ''
+staged = '[++\($count\)](fg:green)'
+renamed = ''
+deleted = ''
 
 [deno]
 format = " [deno](italic) [∫ $version](green bold)"
@@ -209,10 +129,6 @@ format = " [aws](italic) [$symbol $profile $region]($style)"
 style = "bold blue"
 symbol = "▲ "
 
-[buf]
-symbol = "■ "
-format = " [buf](italic) [$symbol $version $buf_version]($style)"
-
 [c]
 symbol = " "
 format = " [$symbol($version(-$name))]($style)"
@@ -221,54 +137,14 @@ format = " [$symbol($version(-$name))]($style)"
 symbol = "◯ "
 format = " conda [$symbol$environment]($style)"
 
-[dart]
-symbol = "◁◅ "
-format = " dart [$symbol($version )]($style)"
-
 [docker_context]
 symbol = " "
 format = " docker [$symbol$context]($style)"
-
-[elixir]
-symbol = "△ "
-format = " exs [$symbol $version OTP $otp_version ]($style)"
-
-[elm]
-symbol = "◩ "
-format = " elm [$symbol($version )]($style)"
 
 [golang]
 symbol = ""
 format = " go [$symbol($version )]($style)"
 
-[haskell]
-symbol = ""
-format = " hs [$symbol($version )]($style)"
-
 [java]
 symbol = " "
-format = " java [${symbol}(${version} )]($style)"
-
-[julia]
-symbol = "◎ "
-format = " jl [$symbol($version )]($style)"
-
-[memory_usage]
-symbol = "▪▫▪ "
-format = " mem [${ram}( ${swap})]($style)"
-
-[nim]
-symbol = "▴▲▴ "
-format = " nim [$symbol($version )]($style)"
-
-[nix_shell]
-style = 'bold italic dimmed blue'
-symbol = '✶'
-format = '[$symbol nix⎪$state⎪]($style) [$name](italic dimmed white)'
-impure_msg = '[⌽](bold dimmed red)'
-pure_msg = '[⌾](bold dimmed green)'
-unknown_msg = '[◌](bold dimmed ellow)'
-
-[spack]
-symbol = "◇ "
-format = " spack [$symbol$environment]($style)"
+eormat = " java [${symbol}(${version} )]($style)"
