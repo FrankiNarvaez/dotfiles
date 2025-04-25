@@ -32,13 +32,13 @@ $azure\
 
 [character]
 format = " $symbol "
-success_symbol = "[➜](bold italic purple)"
-error_symbol = "[➜](italic red)"
-vimcmd_symbol = "[➜](italic dimmed green)"
+success_symbol = "[➜](bold purple)"
+error_symbol = "[➜](red)"
+vimcmd_symbol = "[➜](dimmed green)"
 
 [username]
 style_user = "white"
-format = "[󰄛 $user]($style)"
+format = "[ $user]($style)"
 disabled = false
 show_always = true
 
@@ -77,13 +77,13 @@ renamed = ''
 deleted = ''
 
 [deno]
-format = " [deno](italic) [∫ $version](green bold)"
+format = " [deno](italic) [∫ $version](green bold)"
 version_format = "${raw}"
 
 [lua]
 format = " [lua](italic) [${symbol}${version}]($style)"
 version_format = "${raw}"
-symbol = "⨀ "
+symbol = " "
 style = "bold bright-yellow"
 
 [nodejs]
@@ -101,7 +101,7 @@ style = "bold bright-yellow"
 
 [ruby]
 format = " [rb](italic) [${symbol}${version}]($style)"
-symbol = "◆ "
+symbol = " "
 version_format = "${raw}"
 style = "bold red"
 
@@ -114,12 +114,12 @@ style = "bold red"
 [package]
 format = " [pkg](italic dimmed) [$symbol$version]($style)"
 version_format = "${raw}"
-symbol = "◨ "
+symbol = " "
 style = "dimmed yellow italic bold"
 
 [swift]
 format = " [sw](italic) [${symbol}${version}]($style)"
-symbol = "◁ "
+symbol = " "
 style = "bold bright-red"
 version_format = "${raw}"
 
@@ -127,14 +127,14 @@ version_format = "${raw}"
 disabled = true
 format = " [aws](italic) [$symbol $profile $region]($style)"
 style = "bold blue"
-symbol = "▲ "
+symbol = " "
 
 [c]
 symbol = " "
 format = " [$symbol($version(-$name))]($style)"
 
 [conda]
-symbol = "◯ "
+symbol = " "
 format = " conda [$symbol$environment]($style)"
 
 [docker_context]
@@ -142,9 +142,9 @@ symbol = " "
 format = " docker [$symbol$context]($style)"
 
 [golang]
-symbol = ""
+symbol = "󰟓 "
 format = " go [$symbol($version )]($style)"
 
 [java]
 symbol = " "
-eormat = " java [${symbol}(${version} )]($style)"
+format = " java [${symbol}(${version} )]($style)"
