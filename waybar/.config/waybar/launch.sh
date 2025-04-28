@@ -25,17 +25,7 @@ sleep 0.2
 # ----------------------------------------------------- 
 # Default theme: /THEMEFOLDER;/VARIATION
 # ----------------------------------------------------- 
-themestyle="/ml4w-blur"
-
-# ----------------------------------------------------- 
-# Get current theme information from .cache/.themestyle.sh
-# ----------------------------------------------------- 
-if [ -f ~/.cache/.themestyle.sh ]; then
-    themestyle=$(cat ~/.cache/.themestyle.sh)
-else
-    touch ~/.cache/.themestyle.sh
-    echo "$themestyle" > ~/.cache/.themestyle.sh
-fi
+themestyle="/modern"
 
 # ----------------------------------------------------- 
 # Loading the configuration
