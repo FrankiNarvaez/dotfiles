@@ -25,22 +25,10 @@
   //
   //
 
-  // Workspaces
-  "hyprland/workspaces": {
-    "on-scroll-up": "hyprctl dispatch workspace r-1",
-    "on-scroll-down": "hyprctl dispatch workspace r+1",
-    "on-click": "activate",
-    "active-only": false,
-    "all-outputs": true,
-    "format": "{}",
-    "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
-    },
-    "persistent-workspaces": {
-      "*": 5
-    }
+  // System tray
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
   },
 
   // Taskbar
@@ -60,37 +48,22 @@
     }
   },
 
-  // Hyprland Window
-  "hyprland/window": {
-    "max-length": 60,
-    "rewrite": {
-      "(.*) - Brave": "$1",
-      "(.*) - Chromium": "$1",
-      "(.*) - Brave Search": "$1",
-      "(.*) - Outlook": "$1",
-      "(.*) Microsoft Teams": "$1"
+  // Workspaces
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
     },
-    "separate-outputs": true
-  },
-
-  // Empty
-  "custom/empty": {
-    "format": ""
-  },
-
-    // Tools
-  "custom/tools": {
-    "format": "",
-    "tooltip-format": "Tools"
-  },
-
-  // Cliphist
-  "custom/cliphist": {
-    "format": "",
-    "on-click": "sleep 0.1 && ~/.config/frann/scripts/cliphist.sh",
-    "on-click-right": "sleep 0.1 && ~/.config/frann/scripts/cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && ~/.config/frann/scripts/cliphist.sh w",
-    "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list"
+    "persistent-workspaces": {
+      "*": 3
+    }
   },
 
   // Updates Count
@@ -102,130 +75,58 @@
     "interval": 1800,
   },
 
-  // Power Menu
-  "custom/exit": {
-    "format": "",
-    "on-click": "~/.config/frann/scripts/wlogout.sh",
-    "on-click-right": "hyprlock",
-    "tooltip-format": "Left: Power menu\nRight: Lock screen"
-  },
-
-  // SwayNC
-  "custom/notification": {
-    "tooltip-format": "Left: Notifications\nRight: Do not disturb",
-    "format": "{icon}",
+  // Pulseaudio
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}  {volume}",
+    "format-bluetooth": "{volume} {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " ",
+    "format-source": "{volume} ",
+    "format-source-muted": "",
     "format-icons": {
-      "notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "none": "",
-      "dnd-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-none": "",
-      "inhibited-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
-      "dnd-inhibited-none": ""
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
     },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "on-click": "pavucontrol"
   },
 
-  // Hypridle inhibitor
-  "custom/hypridle": {
-    "format": "",
-    "return-type": "json",
-    "escape": true,
-    "exec-on-event": true,
-    "interval": 60,
-    "exec": "~/.config/hypr/scripts/hypridle.sh status",
-    "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
-  },
-
-  // Keyboard State
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-
-  // System tray
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10
-  },
-
-  // Clock
-  "clock": {
-    "format": "{:%H:%M %a}",
-    "on-click": "notion-calendar-electron",
-    "timezone": "",
-    "tooltip": false
-  },
-
-  // System
-  "custom/system": {
-    "format": "",
-    "tooltip": false
-  },
-
-  // CPU
-  "cpu": {
-    "format": "/ C {usage} ",
-    "on-click": "~/.config/frann/settings/system-monitor.sh"
-  },
-
-  // Memory
-  "memory": {
-    "format": "/ M {} ",
-    "on-click": "~/.config/frann/settings/system-monitor.sh"
-  },
-
-  // Harddisc space used
-  "disk": {
+  // Bluetooth
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "",
+    "format-off": "",
     "interval": 30,
-    "format": "D {percentage_used} ",
-    "path": "/",
-    "on-click": "~/.config/frann/settings/system-monitor.sh"
+    "on-click": "blueman-manager",
+    "format-no-controller": ""
   },
 
-  "hyprland/language": {
-    "format": "/ K {short}"
-  },
-
-  // Group Hardware
-  "group/hardware": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 300,
-      "children-class": "not-memory",
-      "transition-left-to-right": false
-    },
-    "modules": ["custom/system", "disk", "cpu", "memory", "hyprland/language"]
-  },
-
-  // Group Tools
-  "group/tools": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 300,
-      "children-class": "not-memory",
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "custom/tools",
-      "custom/cliphist",
-      "custom/hypridle",
-    ]
+  // backlight:
+  "backlight": {
+    "format": "{icon} {percent}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ],
+    "scroll-step": 1
   },
 
   // Network
@@ -256,7 +157,106 @@
     "format-alt": "{icon}  {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  // System
+  "custom/system": {
+    "format": "",
+    "tooltip": false
+  },
+
+  // CPU
+  "cpu": {
+    "format": "C {usage} ",
+    "on-click": "~/.config/frann/settings/system-monitor.sh"
+  },
+
+  // Memory
+  "memory": {
+    "format": "M {} ",
+    "on-click": "~/.config/frann/settings/system-monitor.sh"
+  },
+
+  // Harddisc space used
+  "disk": {
+    "interval": 30,
+    "format": "{percentage_used} ",
+    "path": "/",
+    "on-click": "~/.config/frann/settings/system-monitor.sh"
+  },
+
+  "hyprland/language": {
+    "format": "K {short} "
+  },
+
+  // SwayNC
+  "custom/notification": {
+    "tooltip-format": "Left: Notifications\nRight: Do not disturb",
+    "format": "{icon}",
+    "format-icons": {
+      "notification":
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "none": "",
+      "dnd-notification":
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "dnd-none": "",
+      "inhibited-notification":
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification":
+        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+  // Empty
+  "custom/empty": {
+    "format": ""
+  },
+
+  // Power Menu
+  "custom/exit": {
+    "format": "",
+    "on-click": "~/.config/frann/scripts/wlogout.sh",
+    "on-click-right": "hyprlock",
+    "tooltip-format": "Left: Power menu\nRight: Lock screen"
+  },
+
+  // Keyboard State
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    }
+  },
+
+  // Clock
+  "clock": {
+    "format": "{:%H:%M}",
+    "on-click": "notion-calendar-electron",
+    "timezone": "",
+    "tooltip": false
+  },
+
+  // Group Hardware
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": ["custom/system", "disk", "cpu", "memory", "hyprland/language"]
   },
 
   // Power Profiles Daemon
@@ -272,71 +272,9 @@
     }
   },
 
-  // Pulseaudio
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}",
-    "format-bluetooth": "{volume} {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume} ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": " ",
-      "hands-free": " ",
-      "headset": " ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
-      "default": ["", "", ""]
-    },
-    "on-click": "pavucontrol"
-  },
-
-  // Bluetooth
-  "bluetooth": {
-    "format": " {status}",
-    "format-disabled": "",
-    "format-off": "",
-    "interval": 30,
-    "on-click": "blueman-manager",
-    "format-no-controller": ""
-  },
-
-  // Other
-  "user": {
-    "format": "{user}",
-    "interval": 60,
-    "icon": false
-  },
-
-  // backlight:
-  "backlight": {
-    "format": "{icon} {percent}",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
-    ],
-    "scroll-step": 1
-  },
-
   // Modules Left
   "modules-left": [
     "wlr/taskbar",
-    "hyprland/window",
     "custom/empty"
   ],
 
@@ -354,10 +292,7 @@
     "bluetooth",
     "network",
     "battery", 
-    "power-profiles-daemon",
     "group/hardware",
-    "group/tools",
-    "tray",
     "custom/notification",
     "custom/exit",
     "clock"
