@@ -10,8 +10,7 @@
 //
 {
   // General Settings
-  "layer": "top",
-  "margin-top": 14,
+  "margin-top": 5,
   "margin-bottom": 0,
   "margin-left": 14,
   "margin-right": 14,    
@@ -38,7 +37,7 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": ["Alacritty", "kitty"],
+    //"ignore-list": ["Alacritty", "kitty"],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
     },
@@ -48,6 +47,43 @@
     }
   },
 
+  //cava
+  "cava": {
+    //"cava_config": "~/.config/cava/config",
+    "framerate": 30,
+    "autosens": 1,
+    "sensitivity": 100,
+    "bars": 14,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "method": "pulse",
+    "source": "auto",
+    "stereo": true,
+    "reverse": false,
+    "bar_delimiter": 0,
+    "monstercat": false,
+    "waves": false,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    "actions": {
+      "on-click-right": "mode"
+    }
+  },
+
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{status_icon} <i>{title}</i>",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    // "ignored-players": ["firefox"]
+  },
+  
   // Workspaces
   "hyprland/workspaces": {
     "on-scroll-up": "hyprctl dispatch workspace r-1",
@@ -166,10 +202,19 @@
     "tooltip": false
   },
 
-  // CPU
   "cpu": {
-    "format": "C {usage} ",
-    "on-click": "~/.config/frann/settings/system-monitor.sh"
+      "interval": 1,
+      "format": "{icon}",
+      "format-icons": [
+            "<span color='#69ff94'>▁</span>", // green
+            "<span color='#2aa9ff'>▂</span>", // blue
+            "<span color='#f8f8f2'>▃</span>", // white
+            "<span color='#f8f8f2'>▄</span>", // white
+            "<span color='#ffffa5'>▅</span>", // yellow
+            "<span color='#ffffa5'>▆</span>", // yellow
+            "<span color='#ff9977'>▇</span>", // orange
+            "<span color='#dd532e'>█</span>"  // red
+      ]
   },
 
   // Memory
@@ -242,10 +287,24 @@
 
   // Clock
   "clock": {
-    "format": "{:%H:%M}",
-    "on-click": "notion-calendar-electron",
-    "timezone": "",
-    "tooltip": false
+    "format": "{:%H:%M}  ",
+    "format-alt": "{:%A, %B %d, %Y (%R)}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode"          : "month",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "format": {
+        "months":     "<span color='#4e4e8f'><b>{}</b></span>",
+        "days":       "<span color='#6c4e57'><b>{}</b></span>",
+        "weeks":      "<span color='#3a6c6c'><b>W{}</b></span>",
+        "weekdays":   "<span color='#997a00'><b>{}</b></span>",
+        "today":      "<span color='#aa3355'><b><u>{}</u></b></span>"
+      }
+    },
+    "on-click": "mode",
+    "on-click-right": "notion-calendar-electron",
   },
 
   // Group Hardware
@@ -280,6 +339,8 @@
 
   // Modules Center
   "modules-center": [
+    //"cava",
+    //"mpris",
     "hyprland/workspaces",
     "custom/empty"
   ],
