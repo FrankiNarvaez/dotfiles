@@ -1,10 +1,10 @@
+// @theme "~/.cache/wal/colors-rofi-dark.rasi"
+
 * {
-    main-bg:            #11111be6;
-    main-fg:            #cdd6f4ff;
-    main-br:            #cba6f7ff;
-    main-ex:            #f5e0dcff;
-    select-bg:          #b4befeff;
-    select-fg:          #11111bff;
-    separatorcolor:     transparent;
-    border-color:       transparent;
+    main-bg:            #E0C8A4B3;
+    main-fg:            #FFEBCCE6;
+    main-br:            #745B44E6;
+    main-ex:            #937C5CE6;
+    select-bg:          #F0CDAA80;
+    select-fg:          #523D29E6;
 }
