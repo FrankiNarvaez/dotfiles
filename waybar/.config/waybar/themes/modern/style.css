@@ -11,15 +11,18 @@
 /* -----------------------------------------------------
  * Import Pywal colors
  * ----------------------------------------------------- */
-@import '/home/frann/.cache/wal/colors-waybar.css';
 
-@define-color backgroundlight #F5F7F8;
-@define-color backgrounddark #F5F7F8;
-@define-color workspacesbackground1 #F5F7F8;
-@define-color workspacesbackground2 #CCCCCC;
-@define-color bordercolor #F6F1EE;
-@define-color textcolor1 #4A4947;
-@define-color textcolor2 #222831;
+@import url("/home/frann/.cache/wal/colors-waybar.css");
+
+@define-color backgroundlight @color0;
+@define-color backgrounddark  @color8;
+@define-color textcolor1      @foreground;
+@define-color textcolor2      @color7;
+@define-color textcolor3      @color6;
+@define-color bordercolor     @color4;
+@define-color iconcolor       @color6;
+@define-color workspacesbackground1 @color0;
+@define-color workspacesbackground2 @color1;
 
 /* -----------------------------------------------------
  * General
