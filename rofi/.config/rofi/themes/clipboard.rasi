@@ -13,7 +13,7 @@ configuration {
     show-icons:                  false;
 }
 
-@theme "~/.config/rofi/theme.rasi"
+@theme "~/.config/rofi/colors.rasi"
 
 
 // Main //
