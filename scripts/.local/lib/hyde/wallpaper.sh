@@ -98,7 +98,11 @@ set_wallpaper() {
   # Optional: Notify about wallpaper change
   notify-send -a "Wallpaper" "Wallpaper changed" -i "${wallpaper_path}"
 
+  # Reload waybar to apply colors
   waybar.sh -L
+
+  # Generate rofi colors
+  generate-rofi-colors.sh
 }
 
 current_wallpaper() {
