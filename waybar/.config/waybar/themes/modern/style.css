@@ -8,11 +8,12 @@
  *
  * -----------------------------------------------------
 */
+
 /* -----------------------------------------------------
  * Import Pywal colors
  * ----------------------------------------------------- */
 
-@import url("/home/frann/.cache/wal/colors-waybar.css");
+@import "../../theme.css";
 
 @define-color backgroundlight @color0;
 @define-color backgrounddark  @color8;
