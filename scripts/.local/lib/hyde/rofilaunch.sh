@@ -18,15 +18,12 @@ case "$1" in
   w|--window)
     r_mode="window"
     ;;
-  f|--filebrowser)
-    r_mode="filebrowser"
-    ;;
   r|--run)
     r_mode="run"
     rofi_args+=("--run-command" "sh -c 'uwsm app -- {cmd} || {cmd}'")
     ;;
   h|--help)
-    echo -e "$(basename "$0") [d|w|f|r]"
+    echo -e "$(basename "$0") [d|w|r]"
     exit 0
     ;;
   *)
@@ -37,6 +34,10 @@ esac
 # solo en modo "drun" aplica el tema ~/.config/rofi/theme.rasi
 if [[ "$r_mode" == "drun" ]]; then
     rofi_args+=("-theme" "$HOME/.config/rofi/themes/applications.rasi")
+fi
+
+if [[ "$r_mode" == "window" ]]; then
+    rofi_args+=("-theme" "$HOME/.config/rofi/themes/windows.rasi")
 fi
 
 # lanza rofi y sale

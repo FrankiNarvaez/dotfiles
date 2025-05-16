@@ -101,21 +101,30 @@ set_wallpaper() {
   # Reload waybar to apply colors
   waybar.sh -L
 
-  # Generate rofi colors
-  generate-rofi-colors.sh
+  # Generate colors
+  color.set.sh
 }
 
 current_wallpaper() {
-  if ! [ -e "$HOME/.cache/wallpaper/" ]; then
-    mkdir -p $HOME/.cache/wallpaper/
-  fi
+  cache_dir="$HOME/.cache/wallpaper"
+  link_path="$cache_dir/wallpaper_selected"
+
+  # asegúrate de que exista el directorio
+  mkdir -p "$cache_dir"
 
   if [[ -n "$1" ]]; then
-    wallpaper_name=$1
-    echo "${wallpaper_name}" > $HOME/.cache/wallpaper/wallpaper_selected
+    # si nos pasan un parámetro, creamos (o sobreescribimos) el symlink
+    src="$1"
+    ln -sf "$src" "$link_path"
   else
-    wallpaper_path=$(cat $HOME/.cache/wallpaper/wallpaper_selected)
-    set_wallpaper "${wallpaper_path}"
+    # si no nos pasan nada, leemos hacia dónde apunta el symlink
+    if [[ -L "$link_path" ]]; then
+      target="$(readlink "$link_path")"
+      set_wallpaper "$target"
+    else
+      echo "No hay wallpaper seleccionado (falta el enlace)." >&2
+      return 1
+    fi
   fi
 }
 
