@@ -100,9 +100,6 @@ set_wallpaper() {
 
   # Reload waybar to apply colors
   waybar.sh -L
-
-  # Generate colors
-  color.set.sh
 }
 
 current_wallpaper() {
