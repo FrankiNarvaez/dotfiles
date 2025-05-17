@@ -1,8 +1,1 @@
-* {
-    main-bg:    #1a1512cc;
-    main-fg:    #eceae5e6;
-    main-br:    #347986e6;
-    main-ex:    #5DB5AFe6;
-    select-bg:  #ABC5AB80;
-    select-fg:  #E7CCABe6;
-}
+@theme "~/.cache/wal/colors-rofi.rasi"
