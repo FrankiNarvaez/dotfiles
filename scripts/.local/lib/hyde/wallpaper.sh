@@ -83,19 +83,20 @@ set_wallpaper() {
     while ! swww query &>/dev/null; do sleep 0.1; done
   fi
 
+  # Get color pallete
+  wal -n -q -i "${wallpaper_path}"
+
   # Use swww to set the wallpaper
   swww img "${wallpaper_path}" \
     --transition-type grow \
-    --transition-duration 0.4 \
+    --transition-duration 0.6 \
     --invert-y \
     --transition-fps 60 \
     --transition-pos "$(hyprctl cursorpos 2>/dev/null || echo "0,0")"
 
-  wal -i "${wallpaper_path}"
-
   current_wallpaper "${wallpaper_path}"
 
-  # Optional: Notify about wallpaper change
+  # Notify about wallpaper change
   notify-send -a "Wallpaper" "Wallpaper changed" -i "${wallpaper_path}"
 
   # Reload waybar to apply colors
