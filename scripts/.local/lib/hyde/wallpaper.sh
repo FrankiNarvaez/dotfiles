@@ -62,7 +62,7 @@ wallpaper_select() {
       exit 1
   fi
   
-  # Set the wallpaper
+  # Set wallpaper
   set_wallpaper "${selected_wallpaper_path}"
 }
 
@@ -79,7 +79,7 @@ set_wallpaper() {
   # Init swww-daemon
   if ! swww query &>/dev/null; then
     swww-daemon --format xrgb & disown
-    # esperar a que el daemon levante
+    # wait to start
     while ! swww query &>/dev/null; do sleep 0.1; done
   fi
 
@@ -105,22 +105,22 @@ set_wallpaper() {
 
 current_wallpaper() {
   cache_dir="$HOME/.cache/wallpaper"
-  link_path="$cache_dir/wallpaper_selected"
+  link_path="$cache_dir/wall.set"
 
-  # asegúrate de que exista el directorio
+  # Ensure that folder exists
   mkdir -p "$cache_dir"
 
   if [[ -n "$1" ]]; then
-    # si nos pasan un parámetro, creamos (o sobreescribimos) el symlink
+    # Create symlink
     src="$1"
     ln -sf "$src" "$link_path"
   else
-    # si no nos pasan nada, leemos hacia dónde apunta el symlink
+    # Read symlink
     if [[ -L "$link_path" ]]; then
       target="$(readlink "$link_path")"
       set_wallpaper "$target"
     else
-      echo "No hay wallpaper seleccionado (falta el enlace)." >&2
+      echo "There's not selected wallpapers" >&2
       return 1
     fi
   fi
