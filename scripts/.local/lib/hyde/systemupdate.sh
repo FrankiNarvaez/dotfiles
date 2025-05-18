@@ -30,7 +30,7 @@ if [ "$1" == "up" ] ; then
         done < "$temp_file"
 
         command="
-        fastfetch
+        fastfetch.sh
         printf '[Official] %-10s\n[AUR]      %-10s\n' '$official' '$aur'
         ${aurhlpr} -Syu
         read -n 1 -p 'Press any key to continue...'
