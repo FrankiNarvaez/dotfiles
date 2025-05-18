@@ -1,95 +1,81 @@
 #!/usr/bin/env bash
 
-#  _____                 _       __        __          _                
-# |_   _|__   __ _  __ _| | ___  \ \      / /_ _ _   _| |__   __ _ _ __ 
-#   | |/ _ \ / _` |/ _` | |/ _ \  \ \ /\ / / _` | | | | '_ \ / _` | '__|
-#   | | (_) | (_| | (_| | |  __/   \ V  V / (_| | |_| | |_) | (_| | |   
-#   |_|\___/ \__, |\__, |_|\___|    \_/\_/ \__,_|\__, |_.__/ \__,_|_|   
-#            |___/ |___/                         |___/                  
-#
+THEMES_DIR="$HOME/.config/waybar/themes"
+CACHE_TOGGLE="$HOME/.cache/waybar/waybar-disabled"
+ROFI_THEME="windows"
 
 toggle() {
-  if [ -f ~/.cache/waybar-disabled ] ;then
-    rm ~/.cache/waybar-disabled
-  else
-    touch ~/.cache/waybar-disabled
-  fi
+  [[ -f "$CACHE_TOGGLE" ]] && rm "$CACHE_TOGGLE" || touch "$CACHE_TOGGLE"
   launch
 }
 
-#  ____  _             _    __        __          _                 
-# / ___|| |_ __ _ _ __| |_  \ \      / /_ _ _   _| |__   __ _ _ __  
-# \___ \| __/ _` | '__| __|  \ \ /\ / / _` | | | | '_ \ / _` | '__| 
-#  ___) | || (_| | |  | |_    \ V  V / (_| | |_| | |_) | (_| | |    
-# |____/ \__\__,_|_|   \__|    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    
-#                                           |___/                   
-# ----------------------------------------------------- 
+kill_waybar() { pkill -x waybar 2>/dev/null; }
 
 launch() {
-  # Check if waybar-disabled file exists
-  if [ -f $HOME/.cache/waybar-disabled ] ;then 
-    killall waybar
-    pkill waybar
-    exit 1 
+  # If Waybar is disabled, kill every instance and exit
+  if [[ -f "$CACHE_TOGGLE" ]]; then
+    kill_waybar
+    exit 0
   fi
 
-  # ----------------------------------------------------- 
-  # Quit all running waybar instances
-  # ----------------------------------------------------- 
-  killall waybar
-  pkill waybar
-  sleep 0.2
+  kill_waybar; sleep 0.15   # ensure a single instance
 
-  # ----------------------------------------------------- 
-  # Default theme: /THEMEFOLDER;/VARIATION
-  # ----------------------------------------------------- 
-  themestyle="/${1:-hyde}"
+  local theme="${1:-$(current_theme)}"
 
-  # ----------------------------------------------------- 
-  # Loading the configuration
-  # ----------------------------------------------------- 
-  waybar -c ~/.config/waybar/themes${themestyle}/config.jsonc -s ~/.config/waybar/themes${themestyle}/style.css &
+  waybar \
+    -c "$THEMES_DIR/$theme/config.jsonc" \
+    -s "$THEMES_DIR/$theme/style.css" &
+
+  echo "$theme" > "$HOME/.cache/waybar.set"
+}
+
+current_theme() {
+  local cache="$HOME/.cache/waybar.set"
+  [[ -f "$cache" ]] && cat "$cache" || echo hyde
+}
+
+theme_select() {
+  # Get list of sub-directories (themes)
+  mapfile -t themes < <(find "$THEMES_DIR" -maxdepth 1 -type d -printf '%f\n' | tail -n +2)
+
+  # Build Rofi list; if preview.png exists, use it as an icon
+  local list=""
+  for t in "${themes[@]}"; do
+    if [[ -f "$THEMES_DIR/$t/preview.png" ]]; then
+      list+="$t\0icon\x1f$THEMES_DIR/$t/preview.png\n"
+    else
+      list+="$t\n"
+    fi
+  done
+
+  local chosen
+  chosen=$(printf '%b' "$list" | rofi -dmenu -i \
+            -p "Waybar theme:" \
+            -theme "$ROFI_THEME")
+  [[ -n $chosen ]] && launch "$chosen"
 }
 
 show_help() {
-  echo "En desarrollo"
-  exit
+cat <<EOF
+Usage: $(basename "$0") [option]
+  -T | --toggle           Enable / disable Waybar
+  -S | --select           Open Rofi menu to choose a theme
+  -s | --set <theme>      Launch Waybar with <theme>
+  -L | --launch           Relaunch Waybar with the last used theme
+  -h | --help             Show this help
+EOF
+exit
 }
 
-# Main script logic
 main() {
-  # Check if no arguments are provided
-  if [ -z "${*}" ]; then
-    show_help
-  fi
-
-  # Parse options
-  case "$1" in
-    -T|--toggle)
-      toggle
-      shift
-      ;;
-    -S|--set)
-      if [ -z "$2" ]; then
-        echo "Error: No name theme provided"
-        exit 1
-      fi
-      launch "$2"
-      shift 2
-      ;;
-    -L|--launch)
-      launch
-      shift 2
-      ;;
-    -h|--help)
-      show_help
-      ;;
-    *)
-      echo "Invalid option: $1"
-      show_help
-      ;;
+  [[ -z $1 ]] && show_help
+  case $1 in
+    -T|--toggle)  toggle ;;
+    -S|--select)  theme_select ;;
+    -s|--set)     [[ -z $2 ]] && { echo "Theme name expected"; exit 1; }; launch "$2" ;;
+    -L|--launch)  launch ;;
+    -h|--help|*)  show_help ;;
   esac
 }
 
-# Run the main function
 main "$@"
