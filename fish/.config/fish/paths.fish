@@ -14,4 +14,4 @@
 # set --export PATH $BUN_INSTALL/bin $PATH
 
 # Spicetify path
-# fish_add_path ~/.spicetify
+fish_add_path /home/frann/.spicetify
