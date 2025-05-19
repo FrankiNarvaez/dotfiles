@@ -7,17 +7,6 @@
 /* Bar */
 @define-color bar-bg rgba(0, 0, 0, 0);
 
-/* Main */
-@define-color main-bg @background;
-@define-color main-fg @foreground;
-
-/* Taskbar / Workspaces defaults */
-@define-color wb-color @main-fg;
-@define-color wb-act-bg @color1;
-@define-color wb-act-fg @foreground;
-@define-color wb-hvr-bg @color5;
-@define-color wb-hvr-fg @background;
-
 /* -----------------------------------------------------
 * Global styling
 * ----------------------------------------------------- */
@@ -36,8 +25,8 @@ window#waybar {
 }
 
 tooltip {
-  background: @main-bg;
-  color: @main-fg;
+  background: @background;
+  color: @foreground;
   border-radius: 7px;
   border-width: 0px;
 }
@@ -50,13 +39,13 @@ tooltip {
   border-radius: 9px;
   margin: 3px 0 3px 0;
   padding: 0 3px;
-  color: @main-fg;
+  color: @foreground;
   animation: ws_normal 20s ease-in-out 1;
 }
 
 #workspaces button.active {
-  background: @wb-act-bg;
-  color: @wb-act-fg;
+  background: @color1;
+  color: @foreground;
   margin: 3px 3px 3px 3px;
   padding: 0 12px;
   animation: ws_active 20s ease-in-out 1;
@@ -64,8 +53,8 @@ tooltip {
 }
 
 #workspaces button:hover {
-  background: @wb-hvr-bg;
-  color: @wb-hvr-fg;
+  background: @color5;
+  color: @background;
   animation: ws_hover 20s ease-in-out 1;
   transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
@@ -78,13 +67,13 @@ tooltip {
   border-radius: 9px;
   margin: 3px 0 3px 0;
   padding: 0 3px;
-  color: @wb-color;
+  color: @foreground;
   animation: tb_normal 20s ease-in-out 1;
 }
 
 #taskbar button.active {
-  background: @wb-act-bg;
-  color: @wb-act-fg;
+  background: @color1;
+  color: @foreground;
   margin: 3px;
   padding: 0 12px;
   animation: tb_active 20s ease-in-out 1;
@@ -92,8 +81,8 @@ tooltip {
 }
 
 #taskbar button:hover {
-  background: @wb-hvr-bg;
-  color: @wb-hvr-fg;
+  background: @color5;
+  color: @background;
   animation: tb_hover 20s ease-in-out 1;
   transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
 }
@@ -144,8 +133,8 @@ tooltip {
 #custom-sr_end,
 #custom-rl_end,
 #custom-rr_end {
-  color: @main-fg;
-  background: @main-bg;
+  color: @foreground;
+  background: @background;
   opacity: 1;
   margin: 4px 0;
   padding: 0 4px;
