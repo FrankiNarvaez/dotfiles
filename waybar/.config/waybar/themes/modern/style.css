@@ -154,6 +154,9 @@ window#waybar {
 #pulseaudio.muted {
   background-color: @backgrounddark;
   color: @textcolor1;
+  border-radius: 10px;
+  margin: 5px 0;;
+  padding: 0 10px;
 }
 
 

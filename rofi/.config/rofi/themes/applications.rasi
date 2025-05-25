@@ -52,7 +52,7 @@ inputbar {
   padding:                     4em;
   children:                    [ "entry" ];
   background-color:            @main-bg;
-  background-image:            url("~/.cache/wallpaper/wallpaper_selected", width);
+  background-image:            url("~/.cache/wallpaper/wall.set", width);
   border-radius:               1em 1em 0em 0em;
 }
 entry {
