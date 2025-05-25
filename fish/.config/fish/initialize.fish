@@ -6,10 +6,10 @@
 # ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝╚══════╝
 
 # Init starship
-starship init fish | source
+# starship init fish | source
 
 # Init atuin
-atuin init fish | source
+# atuin init fish | source
 
 # Set tmux
 # if not set -q TMUX

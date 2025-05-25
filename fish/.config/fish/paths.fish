@@ -15,3 +15,7 @@
 
 # Spicetify path
 fish_add_path /home/frann/.spicetify
+
+# Php and Laravel
+set -x PATH /home/frann/.config/herd-lite/bin $PATH
+set -x PHP_INI_SCAN_DIR /home/frann/.config/herd-lite/bin $PHP_INI_SCAN_DIR
