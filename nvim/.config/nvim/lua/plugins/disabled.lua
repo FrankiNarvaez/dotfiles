@@ -8,12 +8,4 @@ return {
     "akinsho/bufferline.nvim",
     enabled = false, -- Disable this plugin
   },
-  {
-    "yetone/avante.nvim",
-    enabled = false,
-  },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    enabled = false,
-  },
 }
