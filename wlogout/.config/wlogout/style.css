@@ -1,0 +1,71 @@
+@import url("/home/frann/.cache/wal/colors-waybar.css");
+
+window {
+  font-family:
+    SF Pro Display,
+    monospace;
+  font-size: 12pt;
+  color: @foreground;
+  background-color: alpha(@background, 0.69);
+}
+
+button {
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 40px;
+  background-size: 60%;
+  border: none;
+  color: @color14;
+  text-shadow: none;
+  box-shadow: none;
+  background-color: alpha(@color0, 0);
+  margin: 1px;
+  transition:
+    box-shadow 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    background-size 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+#lock {
+  background-image: image(url("/home/frann/.config/wlogout/icons/lock.png"));
+  background-size: 70%;
+}
+#lock:hover {
+  background-size: 80%;
+}
+
+#logout {
+  background-image: image(url("/home/frann/.config/wlogout/icons/logout.png"));
+}
+#logout:hover {
+  background-size: 65%;
+}
+
+#shutdown {
+  background-image: image(
+    url("/home/frann/.config/wlogout/icons/shutdown.png")
+  );
+}
+#shutdown:hover {
+  background-size: 65%;
+}
+
+#reboot {
+  background-image: image(url("/home/frann/.config/wlogout/icons/reboot.png"));
+}
+#reboot:hover {
+  background-size: 65%;
+}
+
+/* #suspend {
+  background-image: image(
+    url("/home/frann/.config/wlogout/icons/suspend.png")
+  );
+} */
+
+/* #hibernate {
+  background-image: image(
+    url("/home/frann/.config/wlogout/icons/hibernate.png")
+  );
+} */
