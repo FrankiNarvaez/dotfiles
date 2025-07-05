@@ -44,24 +44,24 @@ wallpaper_select() {
   # Launch rofi menu
   local entry
   entry=$(
-      find "${WALLPAPER_DIR}" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" \) | 
-      sed "s|^${WALLPAPER_DIR}/||" | 
-      awk '{print $0 ":::" "'${WALLPAPER_DIR}'/" $0 ":::" "'${WALLPAPER_DIR}'/" $0 "\u0000icon\u001f'${WALLPAPER_DIR}'/" $0}' | 
+    find "${WALLPAPER_DIR}" -type f \( -name "*.jpg" -o -name "*.png" -o -name "*.jpeg" \) |
+      sed "s|^${WALLPAPER_DIR}/||" |
+      awk '{print $0 ":::" "'${WALLPAPER_DIR}'/" $0 ":::" "'${WALLPAPER_DIR}'/" $0 "\u0000icon\u001f'${WALLPAPER_DIR}'/" $0}' |
       rofi -dmenu \
-          -display-column-separator ":::" \
-          -display-columns 1 \
-          -theme-str "${font_override}" \
-          -theme-str "${r_override}" \
-          -theme "selector"
+        -display-column-separator ":::" \
+        -display-columns 1 \
+        -theme-str "${font_override}" \
+        -theme-str "${r_override}" \
+        -theme "selector"
   )
-  
+
   selected_wallpaper_path=$(awk -F ':::' '{print $2}' <<<"${entry}")
-  
+
   if [ -z "${selected_wallpaper_path}" ]; then
-      echo "No wallpaper selected"
-      exit 1
+    echo "No wallpaper selected"
+    exit 1
   fi
-  
+
   # Set wallpaper
   set_wallpaper "${selected_wallpaper_path}"
 }
@@ -78,7 +78,8 @@ set_wallpaper() {
 
   # Init swww-daemon
   if ! swww query &>/dev/null; then
-    swww-daemon --format xrgb & disown
+    swww-daemon --format xrgb &
+    disown
     # wait to start
     while ! swww query &>/dev/null; do sleep 0.1; done
   fi
@@ -97,10 +98,14 @@ set_wallpaper() {
   current_wallpaper "${wallpaper_path}"
 
   # Notify about wallpaper change
+  killall swaync
   notify-send -a "Wallpaper" "Wallpaper changed" -i "${wallpaper_path}"
 
   # Reload waybar to apply colors
   waybar.sh -L
+
+  # Change Spicetify colors
+  colors.sh
 }
 
 current_wallpaper() {
@@ -135,29 +140,29 @@ main() {
 
   # Parse options
   case "$1" in
-    -S|--select)
-      wallpaper_select
-      shift
-      ;;
-    -s|--set)
-      if [ -z "$2" ]; then
-        echo "Error: No wallpaper path provided"
-        exit 1
-      fi
-      set_wallpaper "$2"
-      shift 2
-      ;;
-    -c|--current)
-      current_wallpaper
-      shift 2
-      ;;
-    -h|--help)
-      show_help
-      ;;
-    *)
-      echo "Invalid option: $1"
-      show_help
-      ;;
+  -S | --select)
+    wallpaper_select
+    shift
+    ;;
+  -s | --set)
+    if [ -z "$2" ]; then
+      echo "Error: No wallpaper path provided"
+      exit 1
+    fi
+    set_wallpaper "$2"
+    shift 2
+    ;;
+  -c | --current)
+    current_wallpaper
+    shift 2
+    ;;
+  -h | --help)
+    show_help
+    ;;
+  *)
+    echo "Invalid option: $1"
+    show_help
+    ;;
   esac
 }
 
