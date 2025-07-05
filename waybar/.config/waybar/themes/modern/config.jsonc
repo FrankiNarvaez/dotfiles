@@ -3,35 +3,32 @@
   "margin-bottom": 0,
   "spacing": 0,
 
-  "modules-left": [
-    "wlr/taskbar",
-    "custom/empty",
-    "mpris"
-  ],
+  "modules-left": ["wlr/taskbar", "custom/empty", "mpris"],
 
   "modules-center": [
     //"cava",
     //"mpris",
     "hyprland/workspaces",
-    "custom/empty"
+    "custom/empty",
   ],
 
   "modules-right": [
     "group/hardware",
+    "custom/swaync",
     "custom/updates",
     "pulseaudio",
     "backlight",
     "bluetooth",
     "network",
-    "battery", 
+    "battery",
     "custom/notification",
     "custom/exit",
-    "clock"
+    "clock",
   ],
 
   "tray": {
     "icon-size": 21,
-    "spacing": 10
+    "spacing": 10,
   },
 
   "wlr/taskbar": {
@@ -42,28 +39,28 @@
     "on-click-middle": "close",
     //"ignore-list": ["Alacritty", "kitty"],
     "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
+      "firefoxdeveloperedition": "firefox-developer-edition",
     },
     "rewrite": {
       "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal"
-    }
+      "Foot Server": "Terminal",
+    },
   },
 
   "mpris": {
     "format": "{player_icon} {dynamic}",
     "rotate": "${r_deg}",
     "format-paused": "{status_icon} <i>{dynamic}</i>",
-    "player-icons": { 
+    "player-icons": {
       "default": "▶",
-      "mpv": "🎵"
+      "mpv": "🎵",
     },
     "status-icons": {
-      "paused": ""
+      "paused": "",
     },
     // "ignored-players": ["firefox"]
     "max-length": 1000,
-    "interval": 1
+    "interval": 1,
   },
 
   "cava": {
@@ -83,10 +80,10 @@
     "waves": false,
     "noise_reduction": 0.77,
     "input_delay": 2,
-    "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     "actions": {
-      "on-click-right": "mode"
-    }
+      "on-click-right": "mode",
+    },
   },
 
   "mpris": {
@@ -94,14 +91,14 @@
     "format-paused": "{status_icon} <i>{title}</i>",
     "player-icons": {
       "default": "▶",
-      "mpv": "🎵"
+      "mpv": "🎵",
     },
     "status-icons": {
-      "paused": "⏸"
+      "paused": "⏸",
     },
     // "ignored-players": ["firefox"]
   },
-  
+
   "hyprland/workspaces": {
     "on-scroll-up": "hyprctl dispatch workspace r-1",
     "on-scroll-down": "hyprctl dispatch workspace r+1",
@@ -112,11 +109,32 @@
     "format-icons": {
       "urgent": "",
       "active": "",
-      "default": ""
+      "default": "",
     },
     "persistent-workspaces": {
-      "*": 3
-    }
+      "*": 3,
+    },
+  },
+
+  "custom/swaync": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": "",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
   },
 
   "custom/updates": {
@@ -148,8 +166,8 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
-    }
+      "default": ["", "", ""],
+    },
   },
 
   "bluetooth": {
@@ -158,18 +176,34 @@
     "format-off": "",
     "interval": 30,
     "on-click": "blueman-manager",
-    "format-no-controller": ""
+    "format-no-controller": "",
   },
 
   "backlight": {
     "device": "intel_backlight",
     "rotate": 0,
     "format": "{icon}{percent}%",
-    "format-icons": [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+    ],
     "tooltip-format": "{icon}{percent}% ",
     "on-scroll-up": "brightnesscontrol.sh i 1",
     "on-scroll-down": "brightnesscontrol.sh d 1",
-    "min-length": 6
+    "min-length": 6,
   },
 
   "network": {
@@ -189,19 +223,19 @@
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 20
+      "critical": 20,
     },
     "format": "{icon}{capacity}%",
     "rotate": 0,
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
   },
 
   "custom/system": {
     "format": "",
-    "tooltip": false
+    "tooltip": false,
   },
 
   "cpu": {
@@ -209,7 +243,7 @@
     "format": "󰍛 {usage}%",
     "rotate": 0,
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
 
   "memory": {
@@ -227,7 +261,7 @@
     "format-alt": "󰾆 {percentage}%",
     "max-length": 10,
     "tooltip": true,
-    "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
+    "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB",
   },
 
   "custom/cpuinfo": {
@@ -237,7 +271,7 @@
     "rotate": 0,
     "interval": 5, // once every 5 seconds
     "tooltip": true,
-    "max-length": 1000
+    "max-length": 1000,
   },
 
   "custom/gpuinfo": {
@@ -252,11 +286,11 @@
   },
 
   "hyprland/language": {
-    "format": "{short}󰌌"
+    "format": "{short}󰌌",
   },
 
   "custom/empty": {
-    "format": ""
+    "format": "",
   },
 
   "keyboard-state": {
@@ -265,8 +299,8 @@
     "format": "{name} {icon}",
     "format-icons": {
       "locked": "",
-      "unlocked": ""
-    }
+      "unlocked": "",
+    },
   },
 
   "clock": {
@@ -282,10 +316,10 @@
       "format": {
         "months": "<span color='#ffead3'><b>{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b>{}</b></span>"
-      }
+        "today": "<span color='#ff6699'><b>{}</b></span>",
+      },
     },
-    "on-click-right": "notion-calendar-electron"
+    "on-click-right": "notion-calendar-electron",
   },
 
   "group/hardware": {
@@ -293,9 +327,16 @@
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": false
+      "transition-left-to-right": false,
     },
-    "modules": ["custom/system","cpu","memory","custom/cpuinfo","custom/gpuinfo","hyprland/language"]
+    "modules": [
+      "custom/system",
+      "cpu",
+      "memory",
+      "custom/cpuinfo",
+      "custom/gpuinfo",
+      "hyprland/language",
+    ],
   },
 
   "power-profiles-daemon": {
@@ -306,7 +347,7 @@
       "default": "",
       "performance": "",
       "balanced": "",
-      "power-saver": ""
-    }
+      "power-saver": "",
+    },
   },
 }
