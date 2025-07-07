@@ -4,8 +4,8 @@
    width="450"
    height="930"
    version="1"
-   sodipodi:docname="Gruvbox-Dark-Blue.svg"
-   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="Gruvminimal.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -22,17 +22,53 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:lockguides="true"
-     inkscape:zoom="2.5364605"
-     inkscape:cx="81.806913"
-     inkscape:cy="66.036906"
-     inkscape:window-width="1892"
-     inkscape:window-height="991"
+     inkscape:zoom="2.8864236"
+     inkscape:cx="160.05967"
+     inkscape:cy="46.424233"
+     inkscape:window-width="1260"
+     inkscape:window-height="665"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <defs
      id="defs5">
+    <linearGradient
+       id="linearGradient5"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#689d6a;stop-opacity:1;"
+         offset="0"
+         id="stop5" />
+      <stop
+         style="stop-color:#8ec07c;stop-opacity:1;"
+         offset="1"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#689d6a;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#8ec07c;stop-opacity:1;"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#689d6a;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#8ec07c;stop-opacity:1;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
     <linearGradient
        id="linearGradient3885"
        x1="53"
@@ -593,6 +629,33 @@
        gradientTransform="matrix(0,-2.3333321,0.66666647,0,-10.475258,137.93882)"
        gradientUnits="userSpaceOnUse"
        xlink:href="#linearGradient2643" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="52"
+       y1="896"
+       x2="60"
+       y2="896"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3"
+       id="linearGradient4"
+       x1="52"
+       y1="902"
+       x2="60"
+       y2="902"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5"
+       id="linearGradient6"
+       x1="52"
+       y1="890"
+       x2="60"
+       y2="890"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <g
      id="progress-normal"
@@ -628,7 +691,7 @@
      height="15"
      x="428"
      y="674.46"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:#689d6a;fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <rect
      id="dial"
      width="45"
@@ -1133,48 +1196,48 @@
      height="4"
      x="52"
      y="888"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:url(#linearGradient6);fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <rect
      id="itemview-pressed-bottom"
      width="8"
      height="4"
      x="52"
      y="900"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:url(#linearGradient4);fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <path
      id="itemview-pressed"
      d="m 52,892 8,0 0,8 -8,0 z"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:url(#linearGradient2);fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <path
      id="itemview-pressed-topright"
      d="m 60,888 4,0 0,4 -4,0 z"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:#8ec07c;fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <path
      id="itemview-pressed-bottomright"
      d="m 60,900 4,0 0,4 -4,0 z"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:#8ec07c;fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <rect
      id="itemview-pressed-right"
      width="4"
      height="8"
      x="60"
      y="892"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:#8ec07c;fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <rect
      id="itemview-pressed-left"
      width="4"
      height="8"
      x="48"
      y="892"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:#689d6a;fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <path
      id="itemview-pressed-topleft"
      d="m 52,888 0,4 -4,0 0,-4 z"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:#689d6a;fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <path
      id="itemview-pressed-bottomleft"
      d="m 48,900 4,0 0,4 -4,0 z"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:#689d6a;fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <rect
      id="itemview-toggled-top"
      width="8"
@@ -1304,7 +1367,7 @@
   <path
      id="button-toggled"
      d="m 179,59 0,-32 -32,0 0,32 z"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:0.80000001" />
+     style="fill:#b16286;fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <path
      id="tabframe-normal"
      d="m 285.5,583.5 0,32 32,0 0,-32 -32,0 z"
@@ -1417,7 +1480,7 @@
   <path
      id="lineedit-focused-bottom"
      d="m 377.5,117.5 32,0 0,-3 -32,0 z"
-     style="color:#000000;line-height:normal;font-family:Sans;text-indent:0;text-align:start;text-transform:none;fill:#82b3a8;stroke:none;stroke-width:0.88800001;fill-opacity:1" />
+     style="color:#000000;line-height:normal;font-family:Sans;text-indent:0;text-align:start;text-transform:none;fill:#689d6a;stroke:none;stroke-width:0.88800001;fill-opacity:1" />
   <g
      id="checkbox-checked-normal"
      transform="translate(0,7)"
@@ -2094,28 +2157,28 @@
     </g>
     <g
        id="g597"
-       style="fill:#00bcd4">
+       style="fill:#689d6a;fill-opacity:1">
       <rect
          id="tab-toggled-bottom"
          width="10"
          height="10"
          x="25"
          y="936"
-         style="fill:#458588;fill-opacity:1" />
+         style="fill:#689d6a;fill-opacity:1" />
       <rect
          id="tab-toggled-bottomright"
          width="10"
          height="10"
          x="35"
          y="936"
-         style="fill:#458588;fill-opacity:1" />
+         style="fill:#689d6a;fill-opacity:1" />
       <rect
          id="tab-toggled-bottomleft"
          width="10"
          height="10"
          x="15"
          y="936"
-         style="fill:#458588;fill-opacity:1" />
+         style="fill:#689d6a;fill-opacity:1" />
     </g>
   </g>
   <g
@@ -2128,21 +2191,21 @@
        height="12.5"
        x="10"
        y="1102.5"
-       style="fill:#458588;fill-opacity:1" />
+       style="fill:#a89984;fill-opacity:1" />
     <rect
        id="scrollbarslider-focused"
        width="7.5"
        height="12.5"
        x="17.5"
        y="1102.5"
-       style="fill:#458588;fill-opacity:0.80000001" />
+       style="fill:#bdae93;fill-opacity:1" />
     <rect
        id="scrollbarslider-pressed"
        width="7.5"
        height="12.5"
        x="25"
        y="1102.5"
-       style="fill:#458588;fill-opacity:0.66666669" />
+       style="fill:#d5c4a1;fill-opacity:1" />
   </g>
   <g
      id="button-normal-bottomleft"
@@ -2180,7 +2243,7 @@
     <path
        id="path3841"
        d="m 53,52 0,-32 -5,0 0,32 z"
-       style="fill:#458588;fill-rule:evenodd;stroke-width:0.51200002;fill-opacity:0.80000001" />
+       style="fill:#b16286;fill-rule:evenodd;stroke-width:0.51200002;fill-opacity:1" />
     <path
        id="path3843"
        d="m 46,20 0,32 2,0 0,-32 z"
@@ -2196,7 +2259,7 @@
       <path
          id="path3847"
          d="m 85,51 -32,0 0,3 32,0 z"
-         style="fill:#458588;fill-rule:evenodd;stroke-width:0.51200002;fill-opacity:0.80000001" />
+         style="fill:#b16286;fill-rule:evenodd;stroke-width:0.51200002;fill-opacity:1" />
       <path
          id="path3849"
          d="m 53,58 32,0 0,-4 -32,0 z"
@@ -2208,7 +2271,7 @@
       <path
          id="path3861"
          d="m 53,25 32,0 0,-6 -32,0 z"
-         style="fill:#458588;fill-rule:evenodd;stroke-width:0.88800001;fill-opacity:0.80000001" />
+         style="fill:#b16286;fill-rule:evenodd;stroke-width:0.88800001;fill-opacity:1" />
       <path
          id="path3863"
          d="m 85,18 -32,0 0,1 32,0 z"
@@ -2254,7 +2317,7 @@
   <path
      id="combo-pressed-bottom"
      d="m 415.5,117.5 32,0 0,-3 -32,0 z"
-     style="color:#000000;line-height:normal;font-family:Sans;text-indent:0;text-align:start;text-transform:none;fill:#82b3a8;stroke:none;stroke-width:0.88800001;fill-opacity:1" />
+     style="color:#000000;line-height:normal;font-family:Sans;text-indent:0;text-align:start;text-transform:none;fill:#8ec078;stroke:none;stroke-width:0.88800001;fill-opacity:1" />
   <rect
      id="combo-normal"
      width="10"
@@ -2273,7 +2336,7 @@
     <path
        id="combo-focused-bottom"
        d="m 415.5,107.5 32,0 0,-3 -32,0 z"
-       style="fill:#82b3a8;fill-opacity:0.73333335" />
+       style="fill:#689d6a;fill-opacity:1" />
   </g>
   <g
      id="g647"
@@ -2636,7 +2699,7 @@
     <path
        id="path2256"
        d="M 7,55 4,55 C 2.5,55 2,54.5 2,53 l 0,-1 5,0 z"
-       style="fill:#458588;fill-rule:evenodd;stroke-width:0.46200001;fill-opacity:0.80000001" />
+       style="fill:#b16286;fill-rule:evenodd;stroke-width:0.46200001;fill-opacity:1" />
     <g
        id="g730"
        style="color:#000000;line-height:normal;font-family:Sans;text-indent:0;text-align:start;text-transform:none;stroke-width:0.86400002">
@@ -2657,7 +2720,7 @@
     <path
        id="path2264"
        d="m 7,14 -3,0 c -1.5,0 -2,0.5 -2,2 l 0,4 5,0 z"
-       style="fill:#458588;fill-rule:evenodd;fill-opacity:0.80000001" />
+       style="fill:#b16286;fill-rule:evenodd;fill-opacity:1" />
     <g
        id="g736"
        style="color:#000000;line-height:normal;font-family:Sans;text-indent:0;text-align:start;text-transform:none">
@@ -2730,7 +2793,7 @@
     <path
        id="path1591"
        d="m 312,50.5 -4,0 0,2 4,0 z"
-       style="fill:#458588;stroke-width:0.148;fill-opacity:1" />
+       style="fill:#b16286;stroke-width:0.148;fill-opacity:1" />
   </g>
   <use
      id="tbutton-toggled-bottomright"
@@ -2740,7 +2803,7 @@
      y="0"
      transform="translate(4,0)"
      xlink:href="#tbutton-toggled-bottom"
-     style="fill:#458588;fill-opacity:1" />
+     style="fill:#b16286;fill-opacity:1" />
   <use
      id="tbutton-toggled-bottomleft"
      width="100%"
@@ -2749,7 +2812,7 @@
      y="0"
      transform="translate(-4,0)"
      xlink:href="#tbutton-toggled-bottom"
-     style="fill:#458588;fill-opacity:1" />
+     style="fill:#b16286;fill-opacity:1" />
   <use
      id="tabframe-normal-right"
      width="100%"
@@ -2820,7 +2883,7 @@
   <path
      id="header-toggled"
      d="m 124,91.5 -6,0 0,6 6,0 z"
-     style="fill:#458588;fill-rule:evenodd;stroke:none;fill-opacity:1" />
+     style="fill:#b16286;fill-rule:evenodd;stroke:none;fill-opacity:1" />
   <rect
      id="rect1547"
      width="27.5"
@@ -4871,45 +4934,48 @@
      style="opacity:0.00100002;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none" />
   <g
      id="menubaritem-pressed-bottom"
-     transform="translate(-173,479.99991)">
+     transform="translate(-173,479.99991)"
+     style="fill:#689d6a;fill-opacity:1">
     <path
        id="menubaritem-pressed-bottom2"
        d="m 391.23065,418.23077 -18.46142,0 0,5.76923 18.46154,0 z"
-       style="opacity:0.00100002;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+       style="opacity:0.00100002;fill:#689d6a;fill-opacity:1;fill-rule:evenodd;stroke:none" />
     <path
        id="path4918"
        d="m 391.23065,418.231 -18.46142,0 0,5.769 18.46154,0 z"
-       style="fill:#458588;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+       style="fill:#689d6a;fill-opacity:1;fill-rule:evenodd;stroke:none" />
   </g>
   <g
      id="menubaritem-pressed-bottomleft"
-     transform="translate(-173,479.99991)">
+     transform="translate(-173,479.99991)"
+     style="fill:#689d6a;fill-opacity:1">
     <path
        id="menubaritem-pressed-bottomleft2"
        d="m 372.76923,424 c -3.17305,0 -5.7692,-2.59615 -5.76918,-5.7692 l 5.76917,-5e-5 z"
-       style="opacity:0.00100002;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+       style="opacity:0.00100002;fill:#689d6a;fill-opacity:1;fill-rule:evenodd;stroke:none" />
     <rect
        id="rect4920"
        width="5.769"
        height="5.769"
        x="367"
        y="418.23"
-       style="opacity:1;fill:#458588;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:1;fill:#689d6a;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
      id="menubaritem-pressed-bottomright"
-     transform="matrix(-1,0,0,1,591.00023,479.99991)">
+     transform="matrix(-1,0,0,1,591.00023,479.99991)"
+     style="fill:#689d6a;fill-opacity:1">
     <path
        id="path4928"
        d="m 372.76923,424 c -3.17305,0 -5.7692,-2.59615 -5.76918,-5.7692 l 5.76917,-5e-5 z"
-       style="opacity:0.00100002;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+       style="opacity:0.00100002;fill:#689d6a;fill-opacity:1;fill-rule:evenodd;stroke:none" />
     <rect
        id="rect4930"
        width="5.769"
        height="5.769"
        x="367"
        y="418.23"
-       style="opacity:1;fill:#458588;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:1;fill:#689d6a;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
      id="common-normal-left"
@@ -5137,42 +5203,42 @@
      height="12"
      x="16"
      y="149"
-     style="opacity:1;fill:#458588;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+     style="opacity:1;fill:#689d6a;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <rect
      id="progress-pattern-normal-bottom"
      width="12"
      height="12"
      x="16"
      y="169"
-     style="opacity:1;fill:#458588;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+     style="opacity:1;fill:#689d6a;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <rect
      id="progress-pattern-normal-topleft"
      width="12"
      height="12"
      x="4"
      y="149"
-     style="opacity:1;fill:#458588;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+     style="opacity:1;fill:#689d6a;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <rect
      id="progress-pattern-normal-topright"
      width="12"
      height="12"
      x="28"
      y="149"
-     style="opacity:1;fill:#458588;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+     style="opacity:1;fill:#689d6a;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <rect
      id="progress-pattern-normal-bottomleft"
      width="12"
      height="12"
      x="4"
      y="169"
-     style="opacity:1;fill:#458588;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+     style="opacity:1;fill:#689d6a;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <rect
      id="progress-pattern-normal-bottomright"
      width="12"
      height="12"
      x="28"
      y="169"
-     style="opacity:1;fill:#458588;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+     style="opacity:1;fill:#689d6a;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   <rect
      id="progress-normal-top"
      width="12"
@@ -5260,38 +5326,38 @@
   <g
      id="progress-pattern-normal"
      transform="matrix(1.5,0,0,1,-35,-1)"
-     style="fill:#458588;fill-opacity:1">
+     style="fill:#689d6a;fill-opacity:1">
     <rect
        id="progress-pattern-normal22"
        width="8"
        height="8"
        x="34"
        y="162"
-       style="opacity:1;fill:#458588;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:1;fill:#689d6a;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
   <g
      id="progress-pattern-normal-left"
      transform="matrix(1.5,0,0,1,-47,-1)"
-     style="fill:#458588;fill-opacity:1">
+     style="fill:#689d6a;fill-opacity:1">
     <rect
        id="rect5155"
        width="8"
        height="8"
        x="34"
        y="162"
-       style="opacity:1;fill:#458588;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:1;fill:#689d6a;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
   <g
      id="progress-pattern-normal-right"
      transform="matrix(1.5,0,0,1,-23,-1)"
-     style="fill:#458588;fill-opacity:1">
+     style="fill:#689d6a;fill-opacity:1">
     <rect
        id="rect5161"
        width="8"
        height="8"
        x="34"
        y="162"
-       style="opacity:1;fill:#458588;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="opacity:1;fill:#689d6a;fill-opacity:1;stroke:none;stroke-width:0.30675909;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
   <g
      id="progress-normal-left"
