@@ -1,0 +1,156 @@
+/* -----------------------------------------------------
+ * Import Pywal colors
+ * ----------------------------------------------------- */
+
+@import "../../theme.css";
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  font-size: 13px;
+  min-height: 10px;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#battery,
+#temperature,
+#clock,
+#workspaces,
+#custom-rofi,
+#tray,
+#pulseaudio,
+#backlight,
+#network,
+#custom-right,
+#custom-left,
+#custom-power,
+#mpris {
+  color: @foreground;
+  background: @color0;
+  margin: 4px 0px 4px 0px;
+  opacity: 1;
+  border: 0px solid @color8;
+}
+
+tooltip {
+  background: @background;
+  color: @foreground;
+  border-radius: 7px;
+  border-width: 0px;
+}
+
+#workspaces button {
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px;
+  border-radius: 9px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: @color7;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.active {
+  background: @color1;
+  color: @color14;
+  margin-left: 3px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-right: 3px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button:hover {
+  background: alpha(@color5, 0.4);
+  border: none;
+}
+
+#workspaces {
+  padding: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#custom-rofi {
+  color: @color2;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#temperature {
+  color: @color14;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#temperature.critical {
+  color: @color1;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#backlight {
+  color: @color6;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#pulseaudio {
+  color: @color13;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#battery {
+  color: @color4;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#mpris {
+  color: @color8;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#tray {
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#network {
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#clock {
+  color: @color3;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#custom-power {
+  padding-left: 0px;
+  padding-right: 10px;
+}
+
+#custom-right {
+  margin-right: 9px;
+  padding-right: 3px;
+  border-radius: 0px 22px 22px 0px;
+}
+
+#custom-left {
+  margin-left: 9px;
+  padding-left: 3px;
+  border-radius: 22px 0px 0px 22px;
+}

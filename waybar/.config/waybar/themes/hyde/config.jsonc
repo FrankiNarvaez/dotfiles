@@ -1,7 +1,7 @@
 {
   // sourced from header module //
   "layer": "top",
-  "output": [ "eDP-1" ],
+  "output": ["eDP-1"],
   "position": "top",
   "mod": "dock",
   "height": 28,
@@ -21,7 +21,7 @@
     "custom/l_end",
     "clock",
     "custom/r_end",
-    "custom/padd"
+    "custom/padd",
   ],
 
   "modules-center": [
@@ -29,7 +29,7 @@
     "custom/l_end",
     "hyprland/workspaces",
     "custom/r_end",
-    "custom/padd"
+    "custom/padd",
   ],
 
   "modules-right": [
@@ -50,7 +50,7 @@
     "custom/cliphist",
     "custom/power",
     "custom/r_end",
-    "custom/padd"
+    "custom/padd",
   ],
 
   "cpu": {
@@ -58,7 +58,7 @@
     "format": "󰍛 {usage}%",
     "rotate": 0,
     "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
 
   "memory": {
@@ -76,7 +76,7 @@
     "format-alt": "󰾆 {percentage}%",
     "max-length": 10,
     "tooltip": true,
-    "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
+    "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB",
   },
 
   "custom/cpuinfo": {
@@ -86,7 +86,7 @@
     "rotate": 0,
     "interval": 5, // once every 5 seconds
     "tooltip": true,
-    "max-length": 1000
+    "max-length": 1000,
   },
 
   "custom/gpuinfo": {
@@ -143,16 +143,16 @@
       "format": {
         "months": "<span color='#ffead3'><b>{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b>{}</b></span>"
-      }
+        "today": "<span color='#ff6699'><b>{}</b></span>",
+      },
     },
     "actions": {
       "on-click-right": "mode",
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+      "on-scroll-down": "shift_down",
+    },
   },
 
   "hyprland/workspaces": {
@@ -164,19 +164,34 @@
     "disable-scroll": false,
     "on-scroll-up": "hyprctl dispatch workspace -1",
     "on-scroll-down": "hyprctl dispatch workspace +1",
-    "persistent-workspaces": {
-    }
+    "persistent-workspaces": {},
   },
 
   "backlight": {
     "device": "intel_backlight",
     "rotate": 0,
-    "format": "{icon} {percent}%",
-    "format-icons": [" "," "," "," "," "," "," "," "," "," "," "," "," "," "," "],
+    "format": "{icon}{percent}%",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+      " ",
+    ],
     "tooltip-format": "{icon} {percent}% ",
     "on-scroll-up": "brightnesscontrol.sh i 1",
     "on-scroll-down": "brightnesscontrol.sh d 1",
-    "min-length": 6
+    "min-length": 6,
   },
 
   "network": {
@@ -210,8 +225,8 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
-    }
+      "default": ["", "", ""],
+    },
   },
 
   "pulseaudio#microphone": {
@@ -224,7 +239,7 @@
     "on-scroll-up": "volumecontrol.sh -i i",
     "on-scroll-down": "volumecontrol.sh -i d",
     "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
-    "scroll-step": 5
+    "scroll-step": 5,
   },
 
   "custom/updates": {
@@ -246,34 +261,34 @@
       {
         "type": "screenshare",
         "tooltip": true,
-        "tooltip-icon-size": 24
+        "tooltip-icon-size": 24,
       },
       {
         "type": "audio-in",
         "tooltip": true,
-        "tooltip-icon-size": 24
-      }
-    ]
+        "tooltip-icon-size": 24,
+      },
+    ],
   },
 
   "tray": {
     "icon-size": 16,
     "rotate": 0,
-    "spacing": 5
+    "spacing": 5,
   },
 
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 20
+      "critical": 20,
     },
     "format": "{icon} {capacity}%",
     "rotate": 0,
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
   },
 
   "custom/cliphist": {
@@ -283,59 +298,59 @@
     "on-click": "sleep 0.1 && cliphist.sh -c",
     "on-click-right": "sleep 0.1 && cliphist.sh -d",
     "on-click-middle": "sleep 0.1 && cliphist.sh -w",
-    "interval" : 86400, // once every day
-    "tooltip": true
+    "interval": 86400, // once every day
+    "tooltip": true,
   },
 
   "custom/power": {
     "format": "{}",
     "rotate": 0,
     "exec": "echo ; echo  logout",
-    "on-click": "powermenu.sh",
-    "interval" : 86400, // once every day
-    "tooltip": true
+    "on-click": "logoutlaunch.sh",
+    "interval": 86400, // once every day
+    "tooltip": true,
   },
 
   // modules for padding //
   "custom/l_end": {
     "format": " ",
-    "interval" : "once",
-    "tooltip": false
+    "interval": "once",
+    "tooltip": false,
   },
 
   "custom/r_end": {
     "format": " ",
-    "interval" : "once",
-    "tooltip": false
+    "interval": "once",
+    "tooltip": false,
   },
 
   "custom/sl_end": {
     "format": " ",
-    "interval" : "once",
-    "tooltip": false
+    "interval": "once",
+    "tooltip": false,
   },
 
   "custom/sr_end": {
     "format": " ",
-    "interval" : "once",
-    "tooltip": false
+    "interval": "once",
+    "tooltip": false,
   },
 
   "custom/rl_end": {
     "format": " ",
-    "interval" : "once",
-    "tooltip": false
+    "interval": "once",
+    "tooltip": false,
   },
 
   "custom/rr_end": {
     "format": " ",
-    "interval" : "once",
-    "tooltip": false
+    "interval": "once",
+    "tooltip": false,
   },
 
   "custom/padd": {
     "format": "  ",
-    "interval" : "once",
-    "tooltip": false
-  }
-} 
+    "interval": "once",
+    "tooltip": false,
+  },
+}

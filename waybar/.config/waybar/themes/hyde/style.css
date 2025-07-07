@@ -44,19 +44,12 @@ tooltip {
 }
 
 #workspaces button.active {
-  background: @color1;
-  color: @foreground;
+  background: @color5;
+  color: @background;
   margin: 3px 3px 3px 3px;
   padding: 0 12px;
   animation: ws_active 20s ease-in-out 1;
-  transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.682);
-}
-
-#workspaces button:hover {
-  background: @color5;
-  color: @background;
-  animation: ws_hover 20s ease-in-out 1;
-  transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 /* Taskbar */
@@ -77,14 +70,14 @@ tooltip {
   margin: 3px;
   padding: 0 12px;
   animation: tb_active 20s ease-in-out 1;
-  transition: all 0.4s cubic-bezier(.55, -0.68, .48, 1.682);
+  transition: all 0.4s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 #taskbar button:hover {
   background: @color5;
   color: @background;
   animation: tb_hover 20s ease-in-out 1;
-  transition: all 0.3s cubic-bezier(.55, -0.68, .48, 1.682);
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
 
 /* Tray & módulos genéricos */
@@ -180,4 +173,21 @@ tooltip {
   border-radius: 7px 0px 0px 7px;
   margin-left: 9px;
   padding-left: 3px;
+}
+
+/* -----------------------------------------------------
+* Bluetooth
+* ----------------------------------------------------- */
+
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected {
+  font-size: 16px;
+  color: @textcolor2;
+  opacity: 0.8;
+  padding: 0px 10px;
+}
+
+#bluetooth.off {
+  background-color: transparent;
 }
