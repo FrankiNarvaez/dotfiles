@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
 THEMES_DIR="$HOME/.config/waybar/themes"
-CACHE_TOGGLE="$HOME/.cache/waybar/waybar-disabled"
+CACHE_DIR="$HOME/.cache/waybar"
+CACHE_TOGGLE="$CACHE_DIR/waybar.disabled"
+CACHE_SET="$CACHE_DIR/waybar.set"
 ROFI_THEME="windows"
+
+mkdir -p "$CACHE_DIR"
 
 toggle() {
   [[ -f "$CACHE_TOGGLE" ]] && rm "$CACHE_TOGGLE" || touch "$CACHE_TOGGLE"
@@ -26,11 +30,11 @@ launch() {
     -c "$THEMES_DIR/$theme/config.jsonc" \
     -s "$THEMES_DIR/$theme/style.css" &
 
-  echo "$theme" > "$HOME/.cache/waybar.set"
+  echo "$theme" > "$CACHE_SET"
 }
 
 current_theme() {
-  local cache="$HOME/.cache/waybar.set"
+  local cache="$CACHE_SET"
   [[ -f "$cache" ]] && cat "$cache" || echo hyde
 }
 
